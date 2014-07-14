@@ -3,3 +3,4 @@ deploy:
   provider: heroku
   api_key:
     secure: cBgjKHJywym0iRK7lWdQp+YivzQyaN7umSAsJ1DQwA8xb0BlWAqDU5xq+w2lV8t4Bnf0mkmbWEOlurY/OA9Xy1Xr9cfUAiiBPt0/8++URkS89U5wBW7H3m5a+ZgPkf9+Hzow9ToVoW/sG5DZp5ItoaJQeUzFmgWxj/+eYOYlW7U=
+  app: cerbyd
