@@ -20,6 +20,11 @@ mvn ninja:run
 
 Then go to http://0.0.0.0:8080/
 
+###Deployment
+
+Travis CI deployed to Heroku at http://cerbyd.herokuapp.com/ after every successful build
+
+
 ###TODO
 
 
