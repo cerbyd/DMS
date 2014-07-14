@@ -5,12 +5,14 @@ Cloud Dealer Management System
 
 Built using the Ninja Java Framework (http://www.ninjaframework.org/)
 
-== Build Projrect
+Build Projrect
+
 ```
-% mvn clean install
+mvn clean install
 ```
 
-== Run Dev Web Server
+Run Dev Web Server
+
 ```
 mvn ninja:run
 ```
