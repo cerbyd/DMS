@@ -1,6 +1,8 @@
 # DMS
 Cloud Dealer Management System
 
+[![Build Status](https://travis-ci.org/cerbyd/DMS.svg?branch=master)](https://travis-ci.org/cerbyd/DMS)
+
 
 Built using the Ninja Java Framework (http://www.ninjaframework.org/)
 
