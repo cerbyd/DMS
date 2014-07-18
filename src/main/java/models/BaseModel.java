@@ -49,14 +49,5 @@ abstract class BaseModel implements Serializable{
         updated = new Date();
     }
 
-    @PrePersist
-    void createdAt() {
-        this.created = new Date();
-    }
-
-    @PreUpdate
-    void updatedAt() {
-        this.updated = new Date();
-    }
 
 }

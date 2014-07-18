@@ -1,7 +1,9 @@
 package models;
-import java.sql.*;
 import java.math.*;
+import java.sql.*;
+import javax.persistence.Entity;
 
+@Entity
 public class Vehicle extends BaseModel{
 
 	private String bodytype;

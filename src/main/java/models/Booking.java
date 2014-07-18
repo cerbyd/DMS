@@ -1,16 +1,15 @@
 package models;
 
-import java.io.Serializable;
 import java.sql.Date;
 import java.sql.Timestamp;
 import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Booking extends BaseModel  {
     
-    @ManyToMany
+    @OneToOne
     private Customer customer;
     
     @ManyToOne

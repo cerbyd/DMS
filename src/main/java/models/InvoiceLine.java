@@ -1,7 +1,6 @@
 package models;
 
 import java.io.Serializable;
-import java.sql.*;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 

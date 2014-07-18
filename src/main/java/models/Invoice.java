@@ -2,12 +2,12 @@ package models;
 
 import java.sql.*;
 import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Invoice extends BaseModel {
    
-    @ManyToMany
+    @ManyToOne
     private Vehicle vehicle;
     private int accountid;
     private Date opendate;
