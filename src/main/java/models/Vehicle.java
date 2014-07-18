@@ -1,13 +1,9 @@
 package models;
 import java.sql.*;
 import java.math.*;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
-public class Vehicle {
-	private int vehicleid;
+public class Vehicle extends BaseModel{
+
 	private String bodytype;
 	private String brand;
 	private String model;
@@ -28,21 +24,8 @@ public class Vehicle {
 	private String transmissiontype;
 	private String vehiclecolour;
 	private String vin;
-	private Date updateddate;
-	private Date createddate;
 	private int lastinvoicenumber;
-	/**
-	 * @return the vehicleid
-	 */
-	public int getVehicleid() {
-		return vehicleid;
-	}
-	/**
-	 * @param vehicleid the vehicleid to set
-	 */
-	public void setVehicleid(int vehicleid) {
-		this.vehicleid = vehicleid;
-	}
+	
 	/**
 	 * @return the bodytype
 	 */
@@ -283,30 +266,7 @@ public class Vehicle {
 	public void setVin(String vin) {
 		this.vin = vin;
 	}
-	/**
-	 * @return the updateddate
-	 */
-	public Date getUpdateddate() {
-		return updateddate;
-	}
-	/**
-	 * @param updateddate the updateddate to set
-	 */
-	public void setUpdateddate(Date updateddate) {
-		this.updateddate = updateddate;
-	}
-	/**
-	 * @return the createddate
-	 */
-	public Date getCreateddate() {
-		return createddate;
-	}
-	/**
-	 * @param createddate the createddate to set
-	 */
-	public void setCreateddate(Date createddate) {
-		this.createddate = createddate;
-	}
+	
 	/**
 	 * @return the lastinvoicenumber
 	 */
