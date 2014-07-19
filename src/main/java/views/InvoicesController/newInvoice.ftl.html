@@ -11,16 +11,9 @@
             <form action="/invoices/" method="post" class="form-horizontal" role="form">
 
                 <div class="form-group">
-                    <label for="title" class="col-lg-2 control-label">Title</label>
+                    <label for="invoiceNumber" class="col-lg-2 control-label">Invoice Number</label>
                     <div class="col-lg-10">
-                        <input type="text" name="title" id="title" value=""  class="form-control"/>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="content" class="col-lg-2 control-label">Content</label>
-                    <div class="col-lg-10">
-                        <textarea name="content" class="form-control" id="content">${(flash.content!"")}</textarea>
+                        <input type="text" name="invoiceNumber" id="number" value="${(flash.invoiceNumber!)}"  class="form-control"/>
                     </div>
                 </div>
 

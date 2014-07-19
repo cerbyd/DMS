@@ -29,8 +29,12 @@ public class Routes implements ApplicationRoutes {
     public void init(Router router) {  
         
         router.GET().route("/").with(ApplicationController.class, "index");
+        
+        
+        router.GET().route("/invoices/").with(InvoicesController.class, "index");
         router.GET().route("/invoices/new").with(InvoicesController.class, "newInvoice");
         router.POST().route("/invoices/").with(InvoicesController.class, "createInvoice");
+        router.GET().route("/invoices/{invoiceNumber}").with(InvoicesController.class, "showInvoice");
      
         ///////////////////////////////////////////////////////////////////////
         // Assets (pictures / javascript)
