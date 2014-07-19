@@ -25,14 +25,14 @@ public class Address extends BaseModel  {
      /**
      * @return the Customer
      */
-    public Customer getCustomerid() {
+    public Customer getCustomer() {
         return customer;
     }
 
     /**
      * @param customer the customer to set
      */
-    public void setCustomerid(Customer customer) {
+    public void setCustomer(Customer customer) {
         this.customer = customer;
     }
 
