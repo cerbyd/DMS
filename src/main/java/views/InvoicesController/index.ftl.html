@@ -2,13 +2,14 @@
 <@layout.myLayout "Invoices">    
 
 <#if invoices??>
-<table class="table">
+<table class="table table-striped">
         <thead>
           <tr>
             <th>#</th>
             <th>Created</th>
             <th>Updated</th>
             <th>Status</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -20,6 +21,11 @@
             <td>${invoice.created?datetime}</td>
             <td>${invoice.updated?datetime}</td>
             <td><span class="label label-info">${invoice.status}</span></td>
+            <td>
+               <form action="/invoices/${invoice.invoiceNumber}/delete"  method="POST">
+                 <input type="submit" value="Delete" class="btn btn-danger pull-right" />
+              </form>
+            </td>
           </tr>
         <h3>
                 

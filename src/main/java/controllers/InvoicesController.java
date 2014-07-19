@@ -47,6 +47,12 @@ public final class InvoicesController {
         }
 
     }
+    
+    
+     public Result deleteInvoice(@PathParam("invoiceNumber") String invoiceNumber) {
+        invoiceDao.delete(invoiceNumber);
+        return Results.redirect("/invoices/");
+    }
 
     public Result newInvoice() {
         return Results.html();
