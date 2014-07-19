@@ -38,11 +38,8 @@ public final class InvoicesController {
         Invoice invoice = invoiceDao.getInvoice(invoiceNumber);
 
         if (invoice != null) {
-            System.out.println("**************** Invoice found");
             return Results.html().render("invoice", invoice);
         } else {
-            System.out.println("****************  Invoice not found");
-    
             return Results
                         .notFound()
                         .render("Can't find that Invoice.")
