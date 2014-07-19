@@ -17,10 +17,11 @@
 package conf;
 
 
+import controllers.ApplicationController;
+import controllers.InvoicesController;
 import ninja.AssetsController;
 import ninja.Router;
 import ninja.application.ApplicationRoutes;
-import controllers.ApplicationController;
 
 public class Routes implements ApplicationRoutes {
 
@@ -28,9 +29,9 @@ public class Routes implements ApplicationRoutes {
     public void init(Router router) {  
         
         router.GET().route("/").with(ApplicationController.class, "index");
-        router.GET().route("/hello_world.json").with(ApplicationController.class, "helloWorldJson");
-        
- 
+        router.GET().route("/invoices/new").with(InvoicesController.class, "newInvoice");
+        router.POST().route("/invoices/").with(InvoicesController.class, "createInvoice");
+     
         ///////////////////////////////////////////////////////////////////////
         // Assets (pictures / javascript)
         ///////////////////////////////////////////////////////////////////////    
