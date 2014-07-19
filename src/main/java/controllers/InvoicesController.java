@@ -12,6 +12,7 @@ import ninja.Context;
 import ninja.Result;
 import ninja.Results;
 import ninja.params.PathParam;
+import ninja.utils.NinjaConstant;
 import ninja.validation.JSR303Validation;
 import ninja.validation.Validation;
 
@@ -36,10 +37,16 @@ public final class InvoicesController {
     public Result showInvoice(@PathParam("invoiceNumber") String invoiceNumber) {
         Invoice invoice = invoiceDao.getInvoice(invoiceNumber);
 
-        if (invoiceNumber != null) {
-          return Results.html().render("invoice", invoice);
-        }else{
-           return Results.notFound();
+        if (invoice != null) {
+            System.out.println("**************** Invoice found");
+            return Results.html().render("invoice", invoice);
+        } else {
+            System.out.println("****************  Invoice not found");
+    
+            return Results
+                        .notFound()
+                        .render("Can't find that Invoice.")
+                        .template(NinjaConstant.LOCATION_VIEW_FTL_HTML_NOT_FOUND);
         }
 
     }
