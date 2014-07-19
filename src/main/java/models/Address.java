@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Address extends BaseModel  {
+public class Address extends  BaseModel  {
 
     @ManyToOne
     private Customer customer;
