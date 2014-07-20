@@ -1,13 +1,17 @@
 package models;
 
-import java.io.Serializable;
-import java.sql.*;
+
+import java.sql.Date;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 
 @Entity
-public class Customer extends BaseModel implements Serializable  {
+public class Customer extends BaseModel  {
 
-    private String customertype;
+    private String reference;
+    
+    @ManyToOne
+    private CustomerType type;
     private String customerstate;
     private String title;
     private String firstname;
@@ -22,18 +26,32 @@ public class Customer extends BaseModel implements Serializable  {
 
 
 
-    /**
-     * @return the customertype
+     /**
+     * @return the reference
      */
-    public String getCustomertype() {
-        return customertype;
+    public String getReference() {
+        return reference;
     }
 
     /**
-     * @param customertype the customertype to set
+     * @param reference the type to set
      */
-    public void setCustomertype(String customertype) {
-        this.customertype = customertype;
+    public void setReference(String reference) {
+        this.reference = reference;
+    }
+    
+    /**
+     * @return the type
+     */
+    public CustomerType getType() {
+        return type;
+    }
+
+    /**
+     * @param type the type to set
+     */
+    public void setType(CustomerType type) {
+        this.type = type;
     }
 
     /**

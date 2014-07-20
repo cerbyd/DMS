@@ -5,26 +5,27 @@
 
     <h1>New Invoice</h1>
 
-    <!-- Example row of columns -->
-    <div class="row">
-        <div class="col-lg-8">
-            <form action="/invoices/" method="post" class="form-horizontal" role="form">
 
-                <div class="form-group">
-                    <label for="invoiceNumber" class="col-lg-2 control-label">Invoice Number</label>
-                    <div class="col-lg-10">
-                        <input type="text" name="invoiceNumber" id="number" value="${(flash.invoiceNumber!)}"  class="form-control"/>
-                    </div>
-                </div>
-
-                <input type="submit" value="Create Invoice" class="btn btn-success pull-right" />
-
-            </form>
-
+    <form role="form" action="/invoices/" method="post">
+         <div class="form-group">
+            <label for="invoiceNumber">Invoice Number</label>
+            <input type="text" class="form-control" name="invoiceNumber" id="invoiceNumber" placeholder="Enter Invoice Number">
         </div>
+        <div class="form-group">
+            <label for="customerReference">Customer</label>
+            <select name="customerReference" class="form-control">
+                <#list customers as customer>
+                  <option value="${customer.reference}">${customer.reference}</option>
+                </#list>
+            </select><br/>
+            <a href="/customers/new" >Add new customer</a>
+        </div>
+        
+        
+        
 
-    </div>
+        <button type="submit" class="btn btn-default">Create Invoice</button>
+    </form>
 </div>
-
 
 </@layout.myLayout>

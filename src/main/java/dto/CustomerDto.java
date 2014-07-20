@@ -5,14 +5,9 @@ import javax.validation.constraints.Size;
 /**
  *
  */
-public final class InvoiceDto {
+public final class CustomerDto {
 
-    
-    
     @Size(min = 1)
-    public String invoiceNumber;
-    
-    
-    
+    public String reference;
 
 }

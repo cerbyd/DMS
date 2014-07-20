@@ -1,31 +1,28 @@
 <#import "../layout/defaultLayout.ftl.html" as layout> 
-<@layout.myLayout "Invoices">    
+<@layout.myLayout "Customers">    
 
+<a href="/customers/new" class="btn btn-primary" role="button">Add Customer</a>
 
-<a href="/invoices/new" class="btn btn-primary" role="button">Add Invoice</a>
-
-<#if invoices??>
+<#if customers??>
 <table class="table table-striped">
         <thead>
           <tr>
             <th>#</th>
             <th>Created</th>
             <th>Updated</th>
-            <th>Status</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
          
     
-    <#list invoices as invoice>
+    <#list customers as customer>
         <tr>
-            <td><a href="/invoices/${invoice.invoiceNumber}">${invoice.invoiceNumber}</a></td>
-            <td>${invoice.created?datetime}</td>
-            <td>${invoice.updated?datetime}</td>
-            <td><span class="label label-info">${invoice.status}</span></td>
+            <td><a href="/customers/${customer.reference}">${customer.reference}</a></td>
+            <td>${customer.created?datetime}</td>
+            <td>${customer.updated?datetime}</td>
             <td>
-               <form action="/invoices/${invoice.invoiceNumber}/delete"  method="POST">
+               <form action="/customer/${customer.reference}/delete"  method="POST">
                  <input type="submit" value="Delete" class="btn btn-danger pull-right" />
               </form>
             </td>

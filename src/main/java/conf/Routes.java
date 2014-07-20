@@ -16,6 +16,7 @@
 package conf;
 
 import controllers.ApplicationController;
+import controllers.CustomersController;
 import controllers.InvoicesController;
 import ninja.AssetsController;
 import ninja.Router;
@@ -34,6 +35,11 @@ public class Routes implements ApplicationRoutes {
         router.POST().route("/invoices/").with(InvoicesController.class, "createInvoice");
         router.GET().route("/invoices/{invoiceNumber}").with(InvoicesController.class, "showInvoice");
 
+        router.GET().route("/customers/").with(CustomersController.class, "index");
+        router.GET().route("/customers/new").with(CustomersController.class, "newCustomer");
+        router.POST().route("/customers/{customerReference}/delete").with(CustomersController.class, "deleteCustomer");
+        router.POST().route("/customers/").with(CustomersController.class, "createCustomer");
+        
         ///////////////////////////////////////////////////////////////////////
         // Assets (pictures / javascript)
         ///////////////////////////////////////////////////////////////////////    
