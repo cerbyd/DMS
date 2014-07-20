@@ -7,7 +7,6 @@ import dto.CustomerDto;
 import java.util.List;
 import java.util.Map;
 import models.Customer;
-import models.Invoice;
 import ninja.Context;
 import ninja.Result;
 import ninja.Results;

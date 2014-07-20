@@ -37,7 +37,7 @@ public class Routes implements ApplicationRoutes {
 
         router.GET().route("/customers/").with(CustomersController.class, "index");
         router.GET().route("/customers/new").with(CustomersController.class, "newCustomer");
-        router.POST().route("/customers/{customerReference}/delete").with(CustomersController.class, "deleteCustomer");
+        router.POST().route("/customers/{reference}/delete").with(CustomersController.class, "deleteCustomer");
         router.POST().route("/customers/").with(CustomersController.class, "createCustomer");
         
         ///////////////////////////////////////////////////////////////////////
