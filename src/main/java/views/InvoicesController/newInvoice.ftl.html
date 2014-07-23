@@ -1,0 +1,31 @@
+<#import "../layout/defaultLayout.ftl.html" as layout>
+<@layout.myLayout "New Invoice">
+
+<div class="container">
+
+    <h1>New Invoice</h1>
+
+
+    <form role="form" action="/invoices/" method="post">
+         <div class="form-group">
+            <label for="invoiceNumber">Invoice Number</label>
+            <input type="text" class="form-control" name="invoiceNumber" id="invoiceNumber" placeholder="Enter Invoice Number">
+        </div>
+        <div class="form-group">
+            <label for="customerReference">Customer</label>
+            <select name="customerReference" class="form-control">
+                <#list customers as customer>
+                  <option value="${customer.reference}">${customer.reference}</option>
+                </#list>
+            </select><br/>
+            <a href="/customers/new" >Add new customer</a>
+        </div>
+        
+        
+        
+
+        <button type="submit" class="btn btn-default">Create Invoice</button>
+    </form>
+</div>
+
+</@layout.myLayout>

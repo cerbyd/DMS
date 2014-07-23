@@ -1,0 +1,39 @@
+<#import "../layout/defaultLayout.ftl.html" as layout> 
+<@layout.myLayout "Customers">    
+
+<a href="/customers/new" class="btn btn-primary" role="button">Add Customer</a>
+
+<#if customers??>
+<table class="table table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Created</th>
+            <th>Updated</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+         
+    
+    <#list customers as customer>
+        <tr>
+            <td><a href="/customers/${customer.reference}">${customer.reference}</a></td>
+            <td>${customer.created?datetime}</td>
+            <td>${customer.updated?datetime}</td>
+            <td>
+               <form action="/customers/${customer.reference}/delete"  method="POST">
+                 <input type="submit" value="Delete" class="btn btn-danger pull-right" />
+              </form>
+            </td>
+          </tr>
+        <h3>
+                
+        </h3>  
+    </#list>
+        </tbody>
+      </table>
+    
+</#if>
+
+</@layout.myLayout>
