@@ -18,6 +18,13 @@ package conf;
 import controllers.ApplicationController;
 import controllers.CustomersController;
 import controllers.InvoicesController;
+import controllers.MarketingController;
+import controllers.PartsController;
+import controllers.SalesController;
+import controllers.SettingsController;
+import controllers.SigninController;
+import controllers.SignoutController;
+import controllers.VehicleController;
 import ninja.AssetsController;
 import ninja.Router;
 import ninja.application.ApplicationRoutes;
@@ -40,6 +47,19 @@ public class Routes implements ApplicationRoutes {
         router.POST().route("/customers/{reference}/delete").with(CustomersController.class, "deleteCustomer");
         router.POST().route("/customers/").with(CustomersController.class, "createCustomer");
         
+        router.GET().route("/marketing/").with(MarketingController.class, "index");
+        
+        router.GET().route("/parts/").with(PartsController.class, "index");
+        
+        router.GET().route("/sales/").with(SalesController.class, "index");
+        
+        router.GET().route("/vehicle/").with(VehicleController.class, "index");
+        
+        router.GET().route("/settings/").with(SettingsController.class, "index");
+        
+        router.GET().route("/signin/").with(SigninController.class, "index");
+        
+        router.GET().route("/signout/").with(SignoutController.class, "index");
         ///////////////////////////////////////////////////////////////////////
         // Assets (pictures / javascript)
         ///////////////////////////////////////////////////////////////////////    
